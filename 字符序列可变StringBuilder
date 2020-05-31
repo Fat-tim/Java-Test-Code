@@ -1,0 +1,28 @@
+public class TestStringBulider {
+    public static void main(String[] args){
+        Long time1 = System.currentTimeMillis();
+        Long space1 = Runtime.getRuntime().freeMemory();
+        String str = "";
+        for(int z = 0;z < 10000;z++){
+            str = str + z;
+        }
+        Long time2 = System.currentTimeMillis();
+        Long space2 = Runtime.getRuntime().freeMemory();
+
+        System.out.println("str占用系统时间为："+(time2 - time1));
+        System.out.println("str占用系统内存："+(space1 - space2));
+        Long time3 = System.currentTimeMillis();
+        Long space3 = Runtime.getRuntime().freeMemory();
+        StringBuilder sbd = new StringBuilder("");
+        for(int i = 0;i < 10000;i++){
+            sbd.append(i);
+        }
+        Long time4 = System.currentTimeMillis();
+        Long space4 = Runtime.getRuntime().freeMemory();
+        System.out.println("sbd占用系统时间为："+(time4 - time3));
+        System.out.println("sbd占用系统内存："+(space3 - space4));
+
+
+
+    }
+}
