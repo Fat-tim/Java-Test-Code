@@ -1,0 +1,48 @@
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+
+public class TestVisualCalendar {
+    public static void main(String[] args) throws ParseException {
+        System.out.println("请输入日期（格式如：2020-6-1）：");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date =dateFormat.parse(input);
+        System.out.println("日\t一\t二\t三\t四\t五\t六");
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        calendar.set(Calendar.DAY_OF_MONTH,1);
+
+        for (int i = 1;i <= (calendar.get(Calendar.DAY_OF_WEEK)-1);i++){
+            System.out.print("\t");
+        }
+
+        int MaxDay = calendar.getActualMaximum(Calendar.DATE);
+        int day1 = calendar.get(Calendar.DATE);
+        for (int a = 1;a <= MaxDay;a++){
+
+            if(a == day1){
+                System.out.print("*");
+            }
+            int day = calendar.get(Calendar.DAY_OF_WEEK);
+            if (day ==Calendar.SATURDAY){
+                System.out.print('\n');
+
+            }
+
+            System.out.print(calendar.get(Calendar.DAY_OF_MONTH)+"\t");
+            calendar.add(Calendar.DAY_OF_MONTH,1);
+
+        }
+
+
+
+    }
+}
