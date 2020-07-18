@@ -1,0 +1,23 @@
+public class TestFileTree {
+    public static void main(String[] args){
+        File file = new File("");
+        PrintFile(file,0);
+
+    }
+    static void PrintFile(File file,int level){
+        for(int i = 0;i < level;i++){
+            System.out.print("-");
+        };
+        System.out.println(file.getName());
+        if(file.isDirectory()){
+
+            File[] files = file.listFiles();
+
+            for(File temp: files){
+                PrintFile(temp,level +1);
+
+            }
+
+        }
+    }
+}
