@@ -1,0 +1,35 @@
+public class TestEnum {
+    public static void main(String [] args){
+        int a = (int) (7*Math.random());
+        System.out.println(a);
+        switch (a){
+            case 0:
+                System.out.println("今天是周日，好好的休息");
+            break;
+            case 1:
+                System.out.println("今天是周一，开始学习");
+                break;
+            case 2:
+                System.out.println("今天是周二，开始学习");
+                break;
+            case 3:
+                System.out.println("今天是周三，好好学习");
+                break;
+            case 4:
+                System.out.println("今天是周四，认真学习");
+                break;
+            case 5:
+                System.out.println("今天是周五，认真复习");
+                break;
+            case 6:
+                System.out.println("今天是周六，休息休息");
+                break;
+
+        }
+
+    }
+    enum   Week{
+        Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday
+
+    }
+}
