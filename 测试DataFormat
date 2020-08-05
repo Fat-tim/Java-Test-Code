@@ -1,0 +1,19 @@
+public class TestDataFormat {
+    public static void main(String[] args){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String str = dateFormat.format(new Date(2000));
+        System.out.println(str);
+        String str1 = String.valueOf(System.currentTimeMillis());
+        System.out.println(str1);
+        Long time = System.currentTimeMillis();
+        System.out.println(time);
+        String str3 = dateFormat.format(time);
+        System.out.println(str3);
+        Calendar C = new GregorianCalendar();
+
+        System.out.println(C.get(Calendar.DAY_OF_WEEK) - 1);
+        System.out.println(str3 +"周"+(C.get(Calendar.DAY_OF_WEEK) - 1));
+
+
+    }
+}
